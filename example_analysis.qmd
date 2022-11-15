@@ -1,0 +1,100 @@
+---
+title: "Example Analysis"
+bibliography: references.bib
+---
+
+# Background
+
+According to the 2020 United States Census, 8.5% of households did not have a vehicle, 32.5% had at least one vehicle, and 37.1% had at least two "vehicles available" [@census]. Jurisdctions with the lowest car ownership were Washington, D.C., New York, and Massachusetts [@timmons]. 
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-cap: "Fig 1: Map of car ownership rates by household. Source: Matt Timmons"
+#| fig-cap-location: margin
+knitr::include_graphics("https://res.cloudinary.com/value-penguin/image/upload/c_limit,dpr_1.0,f_auto,h_1600,q_auto,w_1600/v1/car-ownership_ulmhvi")
+```
+
+This analysis is directed at those in the market for a used vehicle. It aims to answer the question what influences a vehicles miles per gallon (MPG).
+
+    
+# Data
+The data used in this analysis is Motor Trend Car Road Tests (mtcars), which comes pre-installed with R. It contains information on 32 vehicles across 11 variables. All variables are numeric.
+```{r}
+install.packages("tidyverse")
+load("tidyverse")
+data(mtcars)
+data_dict <- tibble(
+    "Cariable" = c("mpg", "cyl", "disp", "hp", "drat", "wt", "qsec", "vs", "am", "gear", "carb"),
+    "Name" = c("Miles per US gallon", "Number of cylinders", "Displacement (cu.in.)", "Gross horsepower", "Rear axle ratio", "Weight (1000 lbs)", "1/4 mile time", "Engine (0 = V-shaped, 1 = straight)", "Transmission (0 = automatic, 1 = manual)", "Number of forward gears", "Number of carburetors")
+    )
+
+knitr::kable(data_dict)
+```
+
+:::{.callout-note}
+Data dictionary
+Variable        Name
+--------        -----
+mpg             Miles per US gallon
+
+cyl             Number of cylinders
+
+disp            Displacement (cu.in.)
+
+hp              Gross horsepower
+
+drat            Rear axle ratio
+
+wt              Weight (1000 lbs)
+
+qsec            1/4 mile time
+
+vs              Engine (0 = V-shaped, 1 = straight)
+
+am              Transmission (0 = automatic, 1 = manual)
+
+gear            Number of forward gears
+
+carb            Number of carburetors
+
+[@mtcars]
+:::
+    
+# Data wrangling
+Your analysis must include some minimal form of data wrangling with you using at least five different functions from `dplyr` or `tidyr`. 
+    
+# Plots
+- Your analysis should include at least three plots with you using at least three different `geom_*()` functions from `ggplot2` (or another package with `geom_*()` functions). 
+- Plots should have titles, subtitles, captions, and human-understandable axis labels. 
+- At least one plot should using a type of faceting (`facet_grid()` or `facet_wrap()`). 
+
+    
+# Callout blocks
+Your analysis must include at least two different [callout blocks](https://quarto.org/docs/authoring/callouts.html).
+    
+# Margin Content
+Your analysis must include the use of at least 1 [margin content](https://www.stephaniehicks.com/jhustatprogramming2022/posts/2022-10-27-build-website/#margin-content). 
+    
+# Summary
+You must summarize your analysis and/or results with a paragraph (4-6 sentences).
+    
+# Functions used
+At the end of the data analysis, list out each of the functions you used from each of the packages (`dplyr`, `tidyr`, and `ggplot2`) to help the TA with respect to making sure you met all the requirements described above. 
+
+dplyr or tidyr:
+1.
+2.
+3.
+4.
+5.
+
+
+ggplot2:
+1.
+2.
+3.
+
+
+
+
